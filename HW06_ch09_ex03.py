@@ -1,33 +1,76 @@
-# write a function that reads from roster.txt prints the following information to the command line:
-# a. how many first names contain the letter ‘e’
-# b. then lists the first_names which contain the letter ‘e’
+#!/usr/bin/env python
+# HW06_ex09_03.py
+
+# (1)
+# Write a function named avoids that takes a word and a string of forbidden
+# letters, and that returns True if the word doesn't use any of the forbidden
+# letters.
+#   - write avoids
+# (2)
+# Modify your program to prompt the user to enter a string of forbidden
+# letters and then print the number of words that don't contain any of them.
+#   - write function(s)
+# (3)
+# Can you find a combination of 5 forbidden letters that excludes the smallest
+# number of words?
+#   - write a function that finds this combination of letters
+#   - have that function print the letters and print the # of words excluded
+##############################################################################
+# Imports
+import string
+import itertools
+
+# Body
 
 
-def find_the_e():
-    count = 0
-    list_of_names = []
-    file = open("roster.txt", "r")
-    new_list = file.readlines()
-    for line in new_list:
-        line = line.split()
-        if len(line) > 2:
-            line = line[:-1]
-            print(type(line))
-            for element in line:
-                if "e" in element or "E" in element:
-                    count += 1
-                    list_of_names.append(element)
-        else:
-            if "e" in line[0] or "E" in line[0]:
-                count += 1
-                list_of_names.append(line[0])
-    print(count)
-    print(list_of_names)
-    file.close()
+def avoids(word, forbidden_string):
+    """ return True if word NOT forbidden"""
+    for char in forbidden_string:
+        if char in word:
+            return False
+    return True
 
 
+def forbidden_prompt():
+    """ print count of words NOT forbidden by input"""
+    forbidden_string = input(">")
+    count_clean = 0
+    with open("words.txt", "r") as f:
+        for word in f:
+            if avoids(word, forbidden_string):
+                count_clean += 1
+    print(count_clean)
+
+
+def forbidden_param(words, forbidden_string):
+    """ return count of words NOT forbidden by param"""
+    count_clean = 0
+    for word in words:
+        if avoids(word, forbidden_string):
+            count_clean += 1
+    return count_clean
+
+
+def find_five():
+    count_clean = 0
+    excludes_smallest = []
+    with open("words.txt", "r") as f:
+        words = f.readlines()  # 113809
+    combos = list(itertools.combinations(string.ascii_lowercase, 5))  # 65780
+    for each in combos:
+        # Count of words not forbidden by letters
+        tmp_clean = forbidden_param(words, each)
+        # If last check than previous best: update count & letters
+        if tmp_clean > count_clean:
+            count_clean = tmp_clean
+            excludes_smallest = each
+    print(count_clean, excludes_smallest)
+
+
+##############################################################################
 def main():
-    find_the_e()
+    # forbidden_prompt()
+    find_five()  # 96425 ('j', 'q', 'w', 'x', 'z')
 
 if __name__ == '__main__':
     main()

@@ -12,12 +12,26 @@
 ##############################################################################
 # Imports
 
+
 # Body
+def is_abecedarian(word):
+    return sorted(list(word)) == list(word)
+
+
+def bulk_abecedarian_checker(file_name):
+    abecedarian_word_count = 0
+    with open(file_name, "r") as fin:
+        for line in fin.readlines():
+            if is_abecedarian(line.strip()):
+                abecedarian_word_count += 1
+    return abecedarian_word_count
 
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    print(is_abecedarian("zyx"))
+    print(is_abecedarian("abc"))
+    print(bulk_abecedarian_checker("words.txt"))
 
 if __name__ == '__main__':
     main()
