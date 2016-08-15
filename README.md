@@ -38,23 +38,23 @@
 + HW06_ch10_ex01.py
 
 ## D07
-+ HW07_ch10_ex02.py
++ [HW07_ch10_ex02.py](https://github.com/pbc-2016/solutions/blob/master/HW07_ch10_ex02.py)
 
 `capitalize_nested()`
 
 uses recursion
 
-+ HW07_ch10_ex03.py
++ [HW07_ch10_ex03.py](https://github.com/pbc-2016/solutions/blob/master/HW07_ch10_ex03.py)
 
 `cumulative_sum()`
 
 uses `enumerate`
 
-+ HW07_ch10_ex06.py
++ [HW07_ch10_ex06.py](https://github.com/pbc-2016/solutions/blob/master/HW07_ch10_ex06.py)
 
 `is_sorted()`
 
-+ HW07_list1.py (from Google)
++ [HW07_list1.py (from Google)](https://github.com/pbc-2016/solutions/blob/master/HW07_list1.py)
 
 `match_ends()`
 `front_x()`
@@ -64,6 +64,10 @@ uses `key=operator.itemgetter(1)`
 
 ## D08
 
+
+
+
+## Resources
 + roster.txt
 + solution.md
-+ words.txt+ 
++ words.txt

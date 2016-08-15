@@ -26,7 +26,16 @@ def capitalize_nested(lst):
 
 ##############################################################################
 def main():
-    print(capitalize_nested(['apple', ['bear'], 'cat']))
-
+    list_1 = ['apple', ['bear'], 'cat', 'doggy', ['elbow', 'fin', 'garage']]
+    list_2 = [[[['apple']], 'bear', 'cat', 'doggy',
+              ['elbow', 'fin', 'garage', 'house', 'indigo']], 'jump']
+    list_3 = []
+    list_4 = ["doggy"]
+    list_5 = [[[[[[["this"]]]]]]]
+    print(capitalize_nested(list_1))
+    print(capitalize_nested(list_2))
+    print(capitalize_nested(list_3))
+    print(capitalize_nested(list_4))
+    print(capitalize_nested(list_5))
 if __name__ == "__main__":
     main()

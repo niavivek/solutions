@@ -24,7 +24,16 @@ def cumulative_sum(lst):
 
 ##############################################################################
 def main():
-    print(cumulative_sum([1, 2, 3, 4, 5]))
+    list_1 = [1, 2, 3]
+    list_2 = [1, 3, 6]
+    list_3 = [1]
+    list_4 = [0, 0, 0, 1]
+    list_5 = [1, 2, 3, 4]
+    print(cumulative_sum(list_1))   # [1, 3, 6]
+    print(cumulative_sum(list_2))   # [1, 4, 10]
+    print(cumulative_sum(list_3))   # [1]
+    print(cumulative_sum(list_4))   # [0, 0, 0, 1]
+    print(cumulative_sum(list_5))  # [1, 3, 6, 10]
 
 if __name__ == "__main__":
     main()
