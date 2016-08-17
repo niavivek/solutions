@@ -122,6 +122,30 @@ function(s):
 
 uses: `.defaultdict`, `.setdefault`
 
+## D08
++ fizzbuzz.py
+
+uses: `print(msg or n)`
+
++ HW09_ch12_ex00.py
+
+function(s):
+`sumall()`
+
+uses: variable-length arguments w/ `*args`
+
++ HW09_ch12_ex01.py
+
+functions(s):
+`most_frequent()`
+
+uses: `key=operator.itemgetter(1)`, `.get()`
+
++ HW09_ch12_ex02.py
++ HW09_ex12_ex03.py
++ HW09_ex12_ex04.py
++ HW09_wordcount.py
+
 
 ## Resources
 + roster.txt
